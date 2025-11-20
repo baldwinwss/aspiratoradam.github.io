@@ -35,10 +35,10 @@
 
   #ryan1 { top: 50px; left: 30px; transform: rotate(-10deg); }
   #ryan2 { top: 300px; left: 60px; transform: rotate(15deg); }
+
   #ryan3 { top: 100px; right: 50px; transform: rotate(5deg); }
   #ryan4 { top: 350px; right: 80px; transform: rotate(-15deg); }
 
-  /* --- VİDEO --- */
   #video-container {
     width: 60%;
     max-width: 800px;
@@ -66,45 +66,6 @@
     border: none;
   }
 
-  /* --- MOBİL DÜZELTMELER --- */
-  @media (max-width: 768px) {
-
-    body {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-size: cover;
-      background-attachment: scroll;
-    }
-
-    #video-container {
-      width: 95% !important;
-      max-width: none;
-      aspect-ratio: 16/9;
-    }
-
-    .ryan-img {
-      width: 120px;
-      height: 145px;
-      opacity: 0.9;
-    }
-
-    /* Resimler videonun üzerine binmesin */
-    #ryan1 { top: 20px; left: 10px; }
-    #ryan2 { top: auto; bottom: 150px; left: 20px; }
-    #ryan3 { top: 20px; right: 10px; }
-    #ryan4 { top: auto; bottom: 150px; right: 20px; }
-
-    #spotify-container {
-      flex-direction: column !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-    }
-
-    iframe {
-      width: 90% !important;
-    }
-  }
-
 </style>
 </head>
 <body>
@@ -115,7 +76,7 @@
 <img id="ryan4" class="ryan-img" src="ryan4.png" alt="Ryan 4">
 
 <div id="video-container">
-  <video id="main-video" autoplay loop muted playsinline>
+  <video id="main-video" autoplay loop muted>
     <source src="video.mp4" type="video/mp4">
   </video>
 </div>
@@ -137,15 +98,15 @@
 </style>
 
 <div id="spotify-container">
-  <iframe id="spotify1" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify2" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify3" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify4" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify5" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify6" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify7" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify8" allowtransparency="true" allow="encrypted-media"></iframe>
-  <iframe id="spotify9" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify1" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify2" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify3" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify4" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify5" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify6" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify7" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify8" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe id="spotify9" width="300" height="80" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
 
 <script>
@@ -169,4 +130,3 @@ tracks.forEach((id, i) => {
 
 </body>
 </html>
-

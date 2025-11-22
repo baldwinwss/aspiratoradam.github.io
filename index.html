@@ -8,7 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
   }
@@ -18,9 +18,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    gap: 40px;
+    padding: 20px 0;
   }
 
   .ryan-img {
@@ -38,69 +37,64 @@
   #ryan3 { top: 100px; right: 50px; transform: rotate(5deg); }
   #ryan4 { top: 350px; right: 80px; transform: rotate(-15deg); }
 
-  /* --- VİDEO --- */
   #video-container {
-    width: 60%;
+    width: 100%;
     max-width: 800px;
-    aspect-ratio: 16/9;
-    border-radius: 15px;
+    position: relative;
     overflow: hidden;
-    z-index: 1;
+    border-radius: 15px;
   }
   #main-video {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
   }
 
   #spotify-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 30px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100%;
   }
-  iframe {
-    width: 300px;
-    height: 80px;
+  #spotify-container iframe {
+    flex-shrink: 0 !important;
+    display: block !important;
     border-radius: 10px;
     border: none;
+    width: 300px;
+    height: 80px;
   }
 
-  /* --- MOBİL DÜZELTMELER --- */
   @media (max-width: 768px) {
-
-    body {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      background-size: cover;
-      background-attachment: scroll;
-    }
-
-    #video-container {
-      width: 95% !important;
-      max-width: none;
-      aspect-ratio: 16/9;
-    }
 
     .ryan-img {
       width: 120px;
       height: 145px;
       opacity: 0.9;
     }
-
-    /* Resimler videonun üzerine binmesin */
     #ryan1 { top: 20px; left: 10px; }
-    #ryan2 { top: auto; bottom: 150px; left: 20px; }
+    #ryan2 { bottom: 150px; left: 20px; top: auto; }
     #ryan3 { top: 20px; right: 10px; }
-    #ryan4 { top: auto; bottom: 150px; right: 20px; }
+    #ryan4 { bottom: 150px; right: 20px; top: auto; }
+
+    #video-container {
+      width: 95%;
+    }
+    #main-video {
+      width: 100%;
+      height: auto;
+    }
 
     #spotify-container {
       flex-direction: column !important;
       flex-wrap: nowrap !important;
       align-items: center !important;
     }
-
-    iframe {
+    #spotify-container iframe {
       width: 90% !important;
     }
   }
@@ -115,26 +109,10 @@
 <img id="ryan4" class="ryan-img" src="ryan4.png" alt="Ryan 4">
 
 <div id="video-container">
-  <video id="main-video" autoplay loop muted playsinline>
+  <video id="main-video" autoplay muted playsinline webkit-playsinline loop preload="auto">
     <source src="video.mp4" type="video/mp4">
   </video>
 </div>
-
-<style>
-  #spotify-container {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 20px !important;
-    width: 100%;
-  }
-  #spotify-container iframe {
-    flex-shrink: 0 !important;
-    display: block !important;
-  }
-</style>
 
 <div id="spotify-container">
   <iframe id="spotify1" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -169,4 +147,5 @@ tracks.forEach((id, i) => {
 
 </body>
 </html>
+
 
